@@ -1,2 +1,2 @@
 # HackTheDay
-A repository for Hackoctober
+A repository for Hackoctoberfest
