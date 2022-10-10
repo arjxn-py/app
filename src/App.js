@@ -1,6 +1,21 @@
 
 
 function App() {
+    let items = [
+        {
+            text: 'Learn Javascript',
+            completed: false
+        },
+        {
+            text: 'Learn React',
+            completed: false
+        },
+        {
+            text: 'Build a React App',
+            completed: false
+        }
+    ];
+
   return (
     <>
         <div className="container">
@@ -26,6 +41,18 @@ function App() {
                                     <input type="checkbox" value=""/>Teach penguins to fly</label>
                             </div>
                         </li>
+
+                        {items.map(item => (
+                            <li className="ui-state-default">
+                                <div className="checkbox">
+                                    <label>
+                                        <input type="checkbox" value=""/>
+                                        {item.text}
+                                    </label>
+                                </div>
+                            </li>
+                        ))}
+                        
                     </ul>
                 </div>
             </div>
