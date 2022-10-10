@@ -1,4 +1,4 @@
-
+import TodoList from "./TodoList";
 
 function App() {
     let items = [
@@ -21,41 +21,7 @@ function App() {
     <>
         <div className="container">
             <div className="row">
-                <div className="todolist">
-                    <h1>{title.toUpperCase()}</h1>
-                    <ul className="list-unstyled">
-                        <li className="ui-state-default">
-                            <div className="checkbox">
-                                <label>
-                                    <input type="checkbox" value=""/>Take out the trash</label>
-                            </div>
-                        </li>
-                        <li className="ui-state-default">
-                            <div className="checkbox">
-                                <label>
-                                    <input type="checkbox" value=""/>Buy bread</label>
-                            </div>
-                        </li>
-                        <li className="ui-state-default">
-                            <div className="checkbox">
-                                <label>
-                                    <input type="checkbox" value=""/>Teach penguins to fly</label>
-                            </div>
-                        </li>
-
-                        {items.map(item => (
-                            <li className="ui-state-default">
-                                <div className="checkbox">
-                                    <label>
-                                        <input type="checkbox" value=""/>
-                                        {item.text}
-                                    </label>
-                                </div>
-                            </li>
-                        ))}
-
-                    </ul>
-                </div>
+            <TodoList title={title} items={items} />
             </div>
         </div>
     </>
