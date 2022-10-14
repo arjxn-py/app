@@ -1,5 +1,5 @@
-import React from "react";
-
+import React from 'react';
+import * as KeyCode from 'keycode-js';
 class InputBox extends React.Component {
     constructor(props) {
         super(props);
@@ -7,18 +7,33 @@ class InputBox extends React.Component {
             value: props.value || ''
         };
     }
-
     handleChange(e) {
         this.setState({value: e.target.value});
     }
 
+    clear() {
+        this.setState({value: ''});
+    }
+
+    handleKeyUp(e) {
+        const {addNew} = this.props;
+        const text = this.state.value.trim();
+
+        if (e.keyCode === KeyCode.KEY_RETURN && text) {
+            addNew(text);
+            this.clear();
+        }
+    }
+
     render() {
-        return (<input type="text"
+        return (<input
+            type="text"
             className="form-control add-todo"
             value={this.state.value}
+            onKeyUp={this.handleKeyUp.bind(this)}
             onChange={this.handleChange.bind(this)}
-            placeholder="Add New"/>);
+            placeholder="Add New"
+        />);
     }
 }
-
 export default InputBox;
