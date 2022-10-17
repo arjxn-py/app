@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import App from './components/App';
+import App from './App';
 // Added bootstrap
 import 'bootstrap/dist/css/bootstrap.css';
-import './custom.scss';
 // Add our style
 import './style/index.css';
 
